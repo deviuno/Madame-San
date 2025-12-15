@@ -38,7 +38,7 @@ const Loading: React.FC = () => {
       
       <div className="w-full max-w-xs flex flex-col gap-4 p-8 pb-16 z-10">
         <div className="flex justify-between items-end px-1">
-          <p className="text-[#756c60] dark:text-[#bab09c] text-xs font-medium uppercase tracking-wider">Loading Experience</p>
+          <p className="text-[#756c60] dark:text-[#bab09c] text-xs font-medium uppercase tracking-wider">Carregando Experiência</p>
           <div className="flex items-center gap-1">
             <span className="material-symbols-outlined text-primary text-sm animate-spin">diamond</span>
           </div>

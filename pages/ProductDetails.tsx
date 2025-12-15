@@ -90,7 +90,7 @@ const ProductDetails: React.FC = () => {
       {/* Sticky Checkout Button */}
       <div className="fixed bottom-0 left-0 right-0 p-4 bg-background-light dark:bg-background-dark border-t border-stone-200 dark:border-white/10 z-20">
          <button className="w-full py-4 bg-primary text-black font-bold uppercase tracking-[0.2em] text-sm shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:brightness-110 transition-all rounded-sm flex items-center justify-center gap-3">
-            <span>Adicionar à Sacola</span>
+            <span>Adicionar ao Carrinho</span>
             <span className="w-px h-4 bg-black/20"></span>
             <span>R$ 4.500</span>
          </button>
