@@ -44,7 +44,7 @@ const Shop: React.FC = () => {
         </div>
 
         <section className="px-6">
-          <div className="relative w-full aspect-[16/10] overflow-hidden group cursor-pointer shadow-xl">
+          <div onClick={() => navigate('/product/1')} className="relative w-full aspect-[16/10] overflow-hidden group cursor-pointer shadow-xl">
             <div className="absolute inset-0 bg-cover bg-center transition-transform duration-[1.5s] group-hover:scale-110" style={{backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDnJKfhTxWzo2q-l3005cEqfjcx2FtTovo33gFiQUJaaKvU8RCO-24lBxMQFCUge2eWNYzHJRFnZGRGxgzQcGf5XEIC37CzQs0SAaB-4IAZ6U4ZO_mObUNSNcWo-sNt60_BjKRaQLd95i7Z1Jgjwy7lTFrcAO4JctPVYb9vWKMVDJg652xAOK2c8MLdsIvD-dhmPNDZvMSGrgTVElz6fny0hYeoqS9OXVLGZpebYoophQ5h2OFFpzUYal_9Nos_SJxcqxhXia0cHyg')"}}></div>
             <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-700"></div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[85%] border border-white/30 z-10"></div>
@@ -67,7 +67,7 @@ const Shop: React.FC = () => {
           <div className="grid grid-cols-2 gap-x-4 gap-y-10">
             
             {/* Product Card 1 */}
-            <div className="group flex flex-col gap-3 cursor-pointer">
+            <div onClick={() => navigate('/product/1')} className="group flex flex-col gap-3 cursor-pointer">
               <div className="relative aspect-[3/4] w-full overflow-hidden bg-stone-100 dark:bg-[#101010]">
                 <img alt="Colar Pérola Akoya" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu2IivgBbJYp9B1eJYbZ3QNT5554NOExvylquqm495J68IjtTttBlZRsGGZbroBqhmfkVlO6OtmoH--2uOZXglBg8D9qhMhbKjzUNzxFBfAkBmN1ygrhqg2HtXrp0cLtpW5n9lh7uQ_R1F2TWhVZhR72RzW8rxDjtScHiwC0PBYzCMT7G8O1hhKpGl2NGuZE7WYxvB6ZN27LsVH9nemQQCfpej8GZBRP-0OVYAqIcB9nfD2y0CmUMGW2OI8lmaG0ZDiMbaVh4M3s4"/>
                 <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -84,7 +84,7 @@ const Shop: React.FC = () => {
             </div>
 
             {/* Product Card 2 */}
-            <div className="group flex flex-col gap-3 cursor-pointer">
+            <div onClick={() => navigate('/product/2')} className="group flex flex-col gap-3 cursor-pointer">
               <div className="relative aspect-[3/4] w-full overflow-hidden bg-stone-100 dark:bg-[#101010]">
                 <img alt="Brincos South Sea" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADwVa4lXipZKNADnQN3OWDgndbwAE1Kevt6BKQgYh2jUDUQRbTfv03mc66YyM09NBHQ0D9AHCMT9VAg8xAtx7GmyB7nVL2oopokDg__Gbm6M6Ertau906avhi1sCLuyIvi87SIQxDBfgXHJ-0XP6PQ66yqnZBwFEd_bJbXB0lhyOy6Ny_XNuXawNIF2VKXsYvIfaPMPg-zMAlQVijFPkQGm-f4vy3GOCZ1ueEbVW9DduZgY6yqrjMkDgEqWVwxiAsLnAQSO0RgidY"/>
                 <div className="absolute top-3 left-0">
@@ -99,7 +99,7 @@ const Shop: React.FC = () => {
             </div>
 
             {/* Product Card 3 */}
-            <div className="group flex flex-col gap-3 cursor-pointer">
+            <div onClick={() => navigate('/product/3')} className="group flex flex-col gap-3 cursor-pointer">
               <div className="relative aspect-[3/4] w-full overflow-hidden bg-stone-100 dark:bg-[#101010]">
                 <img alt="Kit Manutenção" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXsz4AwfXL5xbG4CvuLUAXVIxpSeRLq4jyngNzQCuhmjwYWgIHaYxXCb0Nd4SW-9EFuGECB5ILv57z5njjss0jN1DSD-CGoakam-66ctRneuZLkNXBgxw9GVkGIP04GWMLFS0FiUFFqa1uwM2OJCkgkgIXx0GMawu2AOY14_CxHu5OjYLUkC_9W_z3QaEqCjrCZUeb2ZWmtZ5URJ-DHGwMVUqru4h0uz4MZZMgOiqWrmqAEEi2kMok-ra_YlWQwm1O2WYcZsV_KLE"/>
               </div>
@@ -111,7 +111,7 @@ const Shop: React.FC = () => {
             </div>
 
             {/* Product Card 4 */}
-            <div className="group flex flex-col gap-3 cursor-pointer">
+            <div onClick={() => navigate('/product/4')} className="group flex flex-col gap-3 cursor-pointer">
               <div className="relative aspect-[3/4] w-full overflow-hidden bg-stone-100 dark:bg-[#101010]">
                 <img alt="Guia do Colecionador" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADwVa4lXipZKNADnQN3OWDgndbwAE1Kevt6BKQgYh2jUDUQRbTfv03mc66YyM09NBHQ0D9AHCMT9VAg8xAtx7GmyB7nVL2oopokDg__Gbm6M6Ertau906avhi1sCLuyIvi87SIQxDBfgXHJ-0XP6PQ66yqnZBwFEd_bJbXB0lhyOy6Ny_XNuXawNIF2VKXsYvIfaPMPg-zMAlQVijFPkQGm-f4vy3GOCZ1ueEbVW9DduZgY6yqrjMkDgEqWVwxiAsLnAQSO0RgidY"/>
               </div>

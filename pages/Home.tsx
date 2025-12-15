@@ -12,7 +12,7 @@ const Home: React.FC = () => {
         <div className="flex items-center px-6 py-4 justify-between">
           <div className="flex flex-col">
             <span className="text-xs font-bold tracking-[0.2em] text-primary uppercase mb-1">Bem-vinda</span>
-            <h1 className="text-2xl font-display text-stone-900 dark:text-white tracking-wide">Madame Julia</h1>
+            <h1 className="text-2xl font-display text-stone-900 dark:text-white tracking-wide">Julia Mendonça</h1>
           </div>
           <div className="flex items-center gap-4">
             <button className="relative group p-2 rounded-full hover:bg-stone-100 dark:hover:bg-white/5 transition-colors">
@@ -23,13 +23,45 @@ const Home: React.FC = () => {
               onClick={() => navigate('/profile')}
               className="flex h-11 w-11 overflow-hidden rounded-full border border-stone-200 dark:border-white/20 ring-2 ring-transparent hover:ring-primary/30 transition-all duration-500"
             >
-              <img alt="User profile portrait" className="h-full w-full object-cover grayscale hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfzHlXrB6NUjc_IQu5qaem5zQxiiEvRtsHGKyWf8czdLe5wo0D1iXbLI6yNKdfXZTfIdxT_DN0zzywWIb8OsMiN_--6VRZH6wyYnau0NvjJWTPj9mXYWkOq5ykAvymLZNwDvegkVfX6n58i53KIdU4hIMWM2mHxe7odkDy9oIYi_kf5Xalim-udYjO0BKuAH6-nRfE5R4YwnNpOcbsNUOCnV-KM_43VgQ3_LlOgfyRaox3n-ntH8TcOYSCIptEvfL2zrQwhChdeiE"/>
+              <img alt="User profile portrait" className="h-full w-full object-cover grayscale hover:grayscale-0 transition-all duration-500" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=988&auto=format&fit=crop"/>
             </button>
           </div>
         </div>
       </header>
 
       <main className="relative flex flex-col gap-10 pt-2 z-10">
+        {/* Menu Rápido - Quick Access Grid */}
+        <section className="px-6 animate-fade">
+            <h2 className="text-xs font-bold tracking-[0.2em] text-stone-400 uppercase mb-4">Menu Rápido</h2>
+            <div className="grid grid-cols-4 gap-4">
+                <button className="flex flex-col items-center gap-2 group" onClick={() => navigate('/chat')}>
+                    <div className="w-14 h-14 rounded-full bg-white dark:bg-white/5 border border-stone-200 dark:border-white/10 flex items-center justify-center shadow-sm group-hover:border-primary/50 group-hover:scale-105 transition-all">
+                        <span className="material-symbols-outlined text-primary text-[24px]">diamond</span>
+                    </div>
+                    <span className="text-[9px] font-bold text-stone-600 dark:text-stone-400 uppercase tracking-wide text-center">Avaliar</span>
+                </button>
+                <button className="flex flex-col items-center gap-2 group" onClick={() => navigate('/courses')}>
+                    <div className="w-14 h-14 rounded-full bg-white dark:bg-white/5 border border-stone-200 dark:border-white/10 flex items-center justify-center shadow-sm group-hover:border-primary/50 group-hover:scale-105 transition-all">
+                        <span className="material-symbols-outlined text-primary text-[24px]">verified</span>
+                    </div>
+                    <span className="text-[9px] font-bold text-stone-600 dark:text-stone-400 uppercase tracking-wide text-center">Certificar</span>
+                </button>
+                <button className="flex flex-col items-center gap-2 group" onClick={() => navigate('/shop')}>
+                    <div className="w-14 h-14 rounded-full bg-white dark:bg-white/5 border border-stone-200 dark:border-white/10 flex items-center justify-center shadow-sm group-hover:border-primary/50 group-hover:scale-105 transition-all">
+                        <span className="material-symbols-outlined text-primary text-[24px]">straighten</span>
+                    </div>
+                    <span className="text-[9px] font-bold text-stone-600 dark:text-stone-400 uppercase tracking-wide text-center">Medidas</span>
+                </button>
+                <button className="flex flex-col items-center gap-2 group" onClick={() => navigate('/profile')}>
+                    <div className="w-14 h-14 rounded-full bg-white dark:bg-white/5 border border-stone-200 dark:border-white/10 flex items-center justify-center shadow-sm group-hover:border-primary/50 group-hover:scale-105 transition-all">
+                        <span className="material-symbols-outlined text-primary text-[24px]">favorite</span>
+                    </div>
+                    <span className="text-[9px] font-bold text-stone-600 dark:text-stone-400 uppercase tracking-wide text-center">Desejos</span>
+                </button>
+            </div>
+        </section>
+
+        {/* Destaques Scroll Horizontal */}
         <section className="flex flex-col gap-5">
           <div className="flex items-end justify-between px-6">
             <h2 className="text-xl font-display font-medium text-stone-900 dark:text-white tracking-wide">Destaques</h2>
@@ -37,8 +69,8 @@ const Home: React.FC = () => {
           </div>
           <div className="flex overflow-x-auto no-scrollbar snap-x snap-mandatory px-6 gap-6 pb-6">
             
-            {/* Card 1 */}
-            <div className="snap-center shrink-0 w-[85vw] max-w-[340px] relative rounded-sm overflow-hidden aspect-[16/10] group cursor-pointer shadow-[0_10px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-700 hover:shadow-[0_20px_50px_rgba(212,175,55,0.15)]">
+            {/* Card 1 - Link para Curso */}
+            <div onClick={() => navigate('/course/1')} className="snap-center shrink-0 w-[85vw] max-w-[340px] relative rounded-sm overflow-hidden aspect-[16/10] group cursor-pointer shadow-[0_10px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-700 hover:shadow-[0_20px_50px_rgba(212,175,55,0.15)]">
               <div className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" style={{backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuADwVa4lXipZKNADnQN3OWDgndbwAE1Kevt6BKQgYh2jUDUQRbTfv03mc66YyM09NBHQ0D9AHCMT9VAg8xAtx7GmyB7nVL2oopokDg__Gbm6M6Ertau906avhi1sCLuyIvi87SIQxDBfgXHJ-0XP6PQ66yqnZBwFEd_bJbXB0lhyOy6Ny_XNuXawNIF2VKXsYvIfaPMPg-zMAlQVijFPkQGm-f4vy3GOCZ1ueEbVW9DduZgY6yqrjMkDgEqWVwxiAsLnAQSO0RgidY')"}}></div>
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-700"></div>
               
@@ -52,8 +84,8 @@ const Home: React.FC = () => {
               </div>
             </div>
 
-            {/* Card 2 */}
-            <div className="snap-center shrink-0 w-[85vw] max-w-[340px] relative rounded-sm overflow-hidden aspect-[16/10] group cursor-pointer shadow-[0_10px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-700 hover:shadow-[0_20px_50px_rgba(212,175,55,0.15)]">
+            {/* Card 2 - Link para Produto */}
+            <div onClick={() => navigate('/product/1')} className="snap-center shrink-0 w-[85vw] max-w-[340px] relative rounded-sm overflow-hidden aspect-[16/10] group cursor-pointer shadow-[0_10px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-700 hover:shadow-[0_20px_50px_rgba(212,175,55,0.15)]">
               <div className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" style={{backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDnJKfhTxWzo2q-l3005cEqfjcx2FtTovo33gFiQUJaaKvU8RCO-24lBxMQFCUge2eWNYzHJRFnZGRGxgzQcGf5XEIC37CzQs0SAaB-4IAZ6U4ZO_mObUNSNcWo-sNt60_BjKRaQLd95i7Z1Jgjwy7lTFrcAO4JctPVYb9vWKMVDJg652xAOK2c8MLdsIvD-dhmPNDZvMSGrgTVElz6fny0hYeoqS9OXVLGZpebYoophQ5h2OFFpzUYal_9Nos_SJxcqxhXia0cHyg')"}}></div>
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-700"></div>
               
@@ -66,6 +98,49 @@ const Home: React.FC = () => {
               </div>
             </div>
           </div>
+        </section>
+
+        {/* Pérola do Dia - Daily Content */}
+        <section className="px-6">
+            <div className="relative overflow-hidden rounded-sm bg-stone-100 dark:bg-[#101010] border border-stone-200 dark:border-white/5 p-6 flex flex-col items-center text-center gap-3">
+                 <div className="absolute top-0 right-0 p-4 opacity-10">
+                    <span className="material-symbols-outlined text-[100px] text-primary">format_quote</span>
+                 </div>
+                 <span className="text-[9px] font-bold text-primary uppercase tracking-[0.2em] border border-primary/30 px-2 py-0.5 rounded-full">Pérola do Dia</span>
+                 <h3 className="text-lg font-serif italic text-stone-700 dark:text-stone-300 leading-relaxed max-w-xs">
+                    "O nácar é a alma da pérola; quanto mais espesso, mais profundo é o seu oriente e mais duradoura será sua beleza."
+                 </h3>
+                 <span className="text-[10px] font-bold text-stone-400 uppercase tracking-widest mt-2">— Madame San</span>
+            </div>
+        </section>
+
+        {/* Comunidade / Social */}
+        <section className="flex flex-col gap-5">
+           <div className="flex items-end justify-between px-6 border-b border-stone-200 dark:border-white/5 pb-2">
+            <h2 className="text-xl font-display font-medium text-stone-900 dark:text-white tracking-wide">Comunidade VIP</h2>
+            <button className="text-stone-400 hover:text-primary transition-colors uppercase text-[10px] font-bold tracking-widest">Participar</button>
+           </div>
+           
+           <div className="flex overflow-x-auto no-scrollbar px-6 gap-4 pb-4">
+                <div className="shrink-0 w-28 flex flex-col gap-2">
+                    <div className="w-28 h-28 rounded-sm overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1599643478518-17488fbbcd75?q=80&w=1887&auto=format&fit=crop" className="w-full h-full object-cover" alt="User post" />
+                    </div>
+                    <span className="text-[10px] font-bold text-stone-500 truncate">@ana.gems: Minha nova aquisição!</span>
+                </div>
+                <div className="shrink-0 w-28 flex flex-col gap-2">
+                    <div className="w-28 h-28 rounded-sm overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?q=80&w=1887&auto=format&fit=crop" className="w-full h-full object-cover" alt="User post" />
+                    </div>
+                    <span className="text-[10px] font-bold text-stone-500 truncate">@carlos_joalheiro: Design customizado.</span>
+                </div>
+                <div className="shrink-0 w-28 flex flex-col gap-2">
+                    <div className="w-28 h-28 rounded-sm overflow-hidden relative border border-primary/30 flex items-center justify-center bg-stone-50 dark:bg-white/5">
+                        <span className="material-symbols-outlined text-primary text-2xl">add_a_photo</span>
+                    </div>
+                    <span className="text-[10px] font-bold text-primary truncate">Compartilhe a sua</span>
+                </div>
+           </div>
         </section>
 
         <section className="flex flex-col gap-8 px-4">

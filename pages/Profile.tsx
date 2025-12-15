@@ -31,13 +31,13 @@ const Profile: React.FC = () => {
         <section className="flex flex-col items-center justify-center py-4">
           <div className="relative group cursor-pointer mb-4">
             <div className="h-32 w-32 rounded-full p-1.5 border border-primary/30 overflow-hidden shadow-[0_0_30px_rgba(212,175,55,0.1)]">
-              <img alt="User profile portrait" className="h-full w-full object-cover rounded-full grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfzHlXrB6NUjc_IQu5qaem5zQxiiEvRtsHGKyWf8czdLe5wo0D1iXbLI6yNKdfXZTfIdxT_DN0zzywWIb8OsMiN_--6VRZH6wyYnau0NvjJWTPj9mXYWkOq5ykAvymLZNwDvegkVfX6n58i53KIdU4hIMWM2mHxe7odkDy9oIYi_kf5Xalim-udYjO0BKuAH6-nRfE5R4YwnNpOcbsNUOCnV-KM_43VgQ3_LlOgfyRaox3n-ntH8TcOYSCIptEvfL2zrQwhChdeiE"/>
+              <img alt="User profile portrait" className="h-full w-full object-cover rounded-full grayscale group-hover:grayscale-0 transition-all duration-700" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=988&auto=format&fit=crop"/>
             </div>
             <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-background-light dark:bg-background-dark border border-stone-200 dark:border-white/10 px-3 py-0.5 rounded-full">
                <span className="text-[10px] font-bold uppercase tracking-widest text-primary">Editar</span>
             </div>
           </div>
-          <h2 className="text-2xl font-display font-medium text-stone-900 dark:text-white tracking-wide">Madame Julia</h2>
+          <h2 className="text-2xl font-display font-medium text-stone-900 dark:text-white tracking-wide">Julia Mendonça</h2>
           <p className="text-xs font-serif italic text-stone-500 dark:text-stone-400 mt-1">Membro VIP • Desde 2023</p>
         </section>
 

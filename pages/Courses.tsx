@@ -38,7 +38,7 @@ const Courses: React.FC = () => {
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-lg font-display text-stone-900 dark:text-white tracking-wide">Em Andamento</h2>
           </div>
-          <div className="group relative flex items-center gap-5 rounded-sm bg-white dark:bg-[#101010] p-4 shadow-sm border border-stone-200 dark:border-white/5 cursor-pointer hover:border-primary/30 transition-all">
+          <div onClick={() => navigate('/course/1')} className="group relative flex items-center gap-5 rounded-sm bg-white dark:bg-[#101010] p-4 shadow-sm border border-stone-200 dark:border-white/5 cursor-pointer hover:border-primary/30 transition-all">
             <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden">
               <img alt="Course Thumbnail" className="h-full w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu2IivgBbJYp9B1eJYbZ3QNT5554NOExvylquqm495J68IjtTttBlZRsGGZbroBqhmfkVlO6OtmoH--2uOZXglBg8D9qhMhbKjzUNzxFBfAkBmN1ygrhqg2HtXrp0cLtpW5n9lh7uQ_R1F2TWhVZhR72RzW8rxDjtScHiwC0PBYzCMT7G8O1hhKpGl2NGuZE7WYxvB6ZN27LsVH9nemQQCfpej8GZBRP-0OVYAqIcB9nfD2y0CmUMGW2OI8lmaG0ZDiMbaVh4M3s4"/>
               <div className="absolute inset-0 flex items-center justify-center bg-black/20">
@@ -69,8 +69,8 @@ const Courses: React.FC = () => {
             </button>
           </div>
           <div className="grid gap-8">
-            {/* Course Card 1 */}
-            <article className="flex flex-col group cursor-pointer">
+            {/* Course Card 1 - Linkado para página de detalhes */}
+            <article className="flex flex-col group cursor-pointer" onClick={() => navigate('/course/1')}>
               <div className="relative h-56 w-full overflow-hidden mb-4">
                 <img alt="Course" className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADwVa4lXipZKNADnQN3OWDgndbwAE1Kevt6BKQgYh2jUDUQRbTfv03mc66YyM09NBHQ0D9AHCMT9VAg8xAtx7GmyB7nVL2oopokDg__Gbm6M6Ertau906avhi1sCLuyIvi87SIQxDBfgXHJ-0XP6PQ66yqnZBwFEd_bJbXB0lhyOy6Ny_XNuXawNIF2VKXsYvIfaPMPg-zMAlQVijFPkQGm-f4vy3GOCZ1ueEbVW9DduZgY6yqrjMkDgEqWVwxiAsLnAQSO0RgidY"/>
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
@@ -91,7 +91,7 @@ const Courses: React.FC = () => {
             </article>
 
             {/* Course Card 2 (Locked) */}
-            <article className="flex flex-col group cursor-pointer relative opacity-90 hover:opacity-100 transition-opacity">
+            <article className="flex flex-col group cursor-pointer relative opacity-90 hover:opacity-100 transition-opacity" onClick={() => navigate('/course/2')}>
               <div className="relative h-56 w-full overflow-hidden mb-4">
                  <div className="absolute inset-0 z-10 bg-black/40 backdrop-blur-[1px] flex items-center justify-center flex-col gap-3 transition-opacity duration-300">
                   <span className="material-symbols-outlined text-white text-[28px] font-light">lock</span>
@@ -110,7 +110,7 @@ const Courses: React.FC = () => {
             </article>
 
             {/* Course Card 3 */}
-             <article className="flex flex-col group cursor-pointer">
+             <article className="flex flex-col group cursor-pointer" onClick={() => navigate('/course/3')}>
               <div className="relative h-56 w-full overflow-hidden mb-4">
                 <img alt="Course" className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADwVa4lXipZKNADnQN3OWDgndbwAE1Kevt6BKQgYh2jUDUQRbTfv03mc66YyM09NBHQ0D9AHCMT9VAg8xAtx7GmyB7nVL2oopokDg__Gbm6M6Ertau906avhi1sCLuyIvi87SIQxDBfgXHJ-0XP6PQ66yqnZBwFEd_bJbXB0lhyOy6Ny_XNuXawNIF2VKXsYvIfaPMPg-zMAlQVijFPkQGm-f4vy3GOCZ1ueEbVW9DduZgY6yqrjMkDgEqWVwxiAsLnAQSO0RgidY"/>
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>

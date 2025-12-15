@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { HashRouter, Routes, Route, useLocation, Navigate, useNavigate } from 'react-router-dom';
 import Home from './pages/Home';
 import Courses from './pages/Courses';
+import CourseDetails from './pages/CourseDetails';
 import Shop from './pages/Shop';
+import ProductDetails from './pages/ProductDetails';
 import Profile from './pages/Profile';
 import Chat from './pages/Chat';
 import Login from './pages/Login';
@@ -20,8 +22,9 @@ const BottomNav = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
-  // Don't show nav on login or loading
-  if (location.pathname === '/login' || location.pathname === '/') return null;
+  // Don't show nav on login, loading, or details pages to focus on content
+  const isDetailsPage = location.pathname.includes('/course/') || location.pathname.includes('/product/');
+  if (location.pathname === '/login' || location.pathname === '/' || isDetailsPage) return null;
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-50 rounded-t-3xl bg-surface-light/90 dark:bg-[#050505]/90 backdrop-blur-xl shadow-[0_-8px_32px_rgba(0,0,0,0.05)] dark:shadow-[0_-8px_40px_rgba(0,0,0,0.6)] border-t border-white/20 dark:border-white/5 transition-all duration-500 py-1">
@@ -36,7 +39,7 @@ const BottomNav = () => {
 
         <button 
           onClick={() => navigate('/courses')}
-          className={`flex flex-1 flex-col items-center gap-0.5 p-1 rounded-xl transition-all duration-300 group ${isActive('/courses') ? 'text-primary' : 'text-stone-400 hover:text-stone-600 dark:hover:text-stone-200'}`}
+          className={`flex flex-1 flex-col items-center gap-0.5 p-1 rounded-xl transition-all duration-300 group ${isActive('/courses') || location.pathname.includes('/course/') ? 'text-primary' : 'text-stone-400 hover:text-stone-600 dark:hover:text-stone-200'}`}
         >
           <span className={`material-symbols-outlined text-[22px] font-light transition-transform duration-300 ${isActive('/courses') ? "font-variation-settings: 'FILL' 1, 'wght' 400" : "font-variation-settings: 'FILL' 0, 'wght' 300 scale-95"}`}>school</span>
           <span className="text-[9px] font-medium tracking-wide">Cursos</span>
@@ -60,7 +63,7 @@ const BottomNav = () => {
 
         <button 
           onClick={() => navigate('/shop')}
-          className={`flex flex-1 flex-col items-center gap-0.5 p-1 rounded-xl transition-all duration-300 group ${isActive('/shop') ? 'text-primary' : 'text-stone-400 hover:text-stone-600 dark:hover:text-stone-200'}`}
+          className={`flex flex-1 flex-col items-center gap-0.5 p-1 rounded-xl transition-all duration-300 group ${isActive('/shop') || location.pathname.includes('/product/') ? 'text-primary' : 'text-stone-400 hover:text-stone-600 dark:hover:text-stone-200'}`}
         >
           <span className={`material-symbols-outlined text-[22px] font-light transition-transform duration-300 ${isActive('/shop') ? "font-variation-settings: 'FILL' 1, 'wght' 400" : "font-variation-settings: 'FILL' 0, 'wght' 300 scale-95"}`}>storefront</span>
           <span className="text-[9px] font-medium tracking-wide">Loja</span>
@@ -113,7 +116,9 @@ export default function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/home" element={<Home />} />
             <Route path="/courses" element={<Courses />} />
+            <Route path="/course/:id" element={<CourseDetails />} />
             <Route path="/shop" element={<Shop />} />
+            <Route path="/product/:id" element={<ProductDetails />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/chat" element={<Chat />} />
           </Routes>
