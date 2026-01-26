@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #E5C579;
+  --color-primary-light: #F9EBC8;
+  --color-primary-dark: #9E8238;
+  --color-background-light: #FAF9F6;
+  --color-background-dark: #050505;
+  --color-surface-dark: #121212;
+  --color-surface-light: #FFFFFF;
+  --color-stone-dark: #1c1917;
+
+  --font-sans: "Manrope", sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-display: "Cinzel", serif;
+}
+
+@variant dark (&:where(.dark, .dark *));
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body {
+  overscroll-behavior-y: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.dark .glass {
+  background: rgba(18, 18, 18, 0.7);
+}
+
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.pearl-shadow {
+  box-shadow:
+    inset -2px -2px 6px rgba(0,0,0,0.2),
+    inset 2px 2px 6px rgba(255,255,255,0.8),
+    0 10px 20px rgba(158, 130, 56, 0.3);
+}
+
+.bg-pearl-gradient {
+  background: radial-gradient(circle at 30% 30%, #FFFBF0 0%, #E5C579 50%, #9E8238 100%);
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #E5C579 0%, #F9EBC8 50%, #9E8238 100%);
+}
+
+.bg-dark-gradient {
+  background: linear-gradient(to bottom, #050505, #121212);
+}
