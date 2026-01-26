@@ -1,16 +1,40 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 
 const Loading: React.FC = () => {
   const navigate = useNavigate();
+  const { user, profile, loading: authLoading } = useAuth();
+  const [minTimeElapsed, setMinTimeElapsed] = useState(false);
 
+  // Minimum display time for loading screen
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigate('/login');
-    }, 2500); // 2.5 seconds loading time
+      setMinTimeElapsed(true);
+    }, 2000);
 
     return () => clearTimeout(timer);
-  }, [navigate]);
+  }, []);
+
+  // Redirect based on auth state
+  useEffect(() => {
+    if (minTimeElapsed && !authLoading) {
+      if (user && profile) {
+        // User is logged in - redirect based on admin status
+        if (profile.is_admin) {
+          navigate('/admin', { replace: true });
+        } else {
+          navigate('/home', { replace: true });
+        }
+      } else if (user && !profile) {
+        // User exists but profile not loaded yet - wait
+        return;
+      } else {
+        // Not logged in - go to login
+        navigate('/login', { replace: true });
+      }
+    }
+  }, [minTimeElapsed, authLoading, user, profile, navigate]);
 
   return (
     <div className="relative flex min-h-screen w-full flex-col items-center justify-between overflow-hidden bg-background-light dark:bg-background-dark">

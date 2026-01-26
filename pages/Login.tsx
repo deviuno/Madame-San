@@ -5,7 +5,7 @@ import { useAuth } from '../contexts/AuthContext';
 const Login: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { signIn, signInWithGoogle, user, loading: authLoading } = useAuth();
+  const { signIn, signInWithGoogle, user, profile, loading: authLoading } = useAuth();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -15,11 +15,16 @@ const Login: React.FC = () => {
 
   // Redirect if already logged in
   useEffect(() => {
-    if (user && !authLoading) {
-      const from = (location.state as any)?.from?.pathname || '/home';
-      navigate(from, { replace: true });
+    if (user && profile && !authLoading) {
+      // If admin, redirect to admin panel
+      if (profile.is_admin) {
+        navigate('/admin', { replace: true });
+      } else {
+        const from = (location.state as any)?.from?.pathname || '/home';
+        navigate(from, { replace: true });
+      }
     }
-  }, [user, authLoading, navigate, location]);
+  }, [user, profile, authLoading, navigate, location]);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,13 +42,11 @@ const Login: React.FC = () => {
         } else {
           setError(error.message);
         }
-      } else {
-        const from = (location.state as any)?.from?.pathname || '/home';
-        navigate(from, { replace: true });
+        setLoading(false);
       }
+      // If no error, the useEffect will handle redirect when profile loads
     } catch (err) {
       setError('Ocorreu um erro ao fazer login. Tente novamente.');
-    } finally {
       setLoading(false);
     }
   };
